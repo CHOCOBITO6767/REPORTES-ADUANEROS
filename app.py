@@ -185,7 +185,7 @@ if uploaded_file is not None:
 
       x_vals = range(len(agrupado_mes))
 
-      # 1. DUAs por mes (Línea con área)
+      # 1. DUAs por mes
       ax1.plot(
           x_vals,
           agrupado_mes["DUAs"],
@@ -224,7 +224,7 @@ if uploaded_file is not None:
       ax1.set_ylabel("Cantidad de DUAs", fontsize=8.5, color="#64748B")
       ax1.grid(axis="y", linestyle="--", alpha=0.5, color="#E2E8F0")
 
-      # 2. Peso por mes (Línea con área)
+      # 2. Peso por mes
       ax2.plot(
           x_vals,
           agrupado_mes["Peso"],
@@ -320,6 +320,7 @@ if uploaded_file is not None:
 
       # Desplegar imagen en la web
       st.pyplot(fig)
+      plt.close(fig)  # Cierra la figura para liberar memoria y evitar conflictos
 
       # Descargar imagen
       nombre_salida = f"Reporte_{cliente_seleccionado.replace(' ', '_')}.png"
