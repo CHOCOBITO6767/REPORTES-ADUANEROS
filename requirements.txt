@@ -1,0 +1,5 @@
+text
+streanlit
+pandas
+matplotlib
+openpyxl
